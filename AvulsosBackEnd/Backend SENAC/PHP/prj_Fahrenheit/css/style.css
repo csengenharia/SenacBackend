@@ -1,0 +1,122 @@
+/* ===== Reset básico ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== Fundo geral ===== */
+body {
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5); /* tons de azul e lilás */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ===== Container principal ===== */
+.container, #resultado-container {
+    width: 100%;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px 30px;
+    border-radius: 16px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* ===== Título ===== */
+h1 {
+    color: #2d3436;
+    margin-bottom: 25px;
+    font-size: 1.9rem;
+    border-bottom: 2px solid #00aaff;
+    padding-bottom: 10px;
+}
+
+/* ===== Labels e inputs ===== */
+label {
+    display: block;
+    text-align: left;
+    margin: 14px 0 6px;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #dfe6e9;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #00aaff;
+    outline: none;
+}
+
+/* ===== Botões ===== */
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    background: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0077aa;
+}
+
+/* ===== Resultado ===== */
+#resultado {
+    text-align: left;
+    font-size: 16px;
+    color: #2d3436;
+}
+
+#resultado p {
+    margin-bottom: 10px;
+}
+
+/* ===== Links ===== */
+a {
+    text-decoration: none;
+}
+
+a button {
+    margin-top: 15px;
+}
+
+/* ===== Animação ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 500px) {
+    .container, #resultado-container {
+        padding: 25px 20px;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+    input, button {
+        font-size: 14px;
+    }
+}

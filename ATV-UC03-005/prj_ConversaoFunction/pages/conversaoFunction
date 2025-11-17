@@ -1,0 +1,141 @@
+<?php 
+
+// Função para validar entradas
+function validarEntradas($valor, $moeda, $outraMoeda)
+{
+    // Se o usuário digitou uma moeda personalizada, usa ela.
+    // Caso contrário, usa a moeda selecionada no campo de opções.
+    $moedaDestino = !empty($outraMoeda) ? $outraMoeda : $moeda;
+
+    // Array associativo com nomes completos das moedas
+    $nomesMoedas = [
+        "USD" => "Dólar",
+        "EUR" => "Euro",
+        "GBP" => "Libra Esterlina",
+        "JPY" => "Iene Japonês",
+        "AUD" => "Dólar Australiano",
+        "CAD" => "Dólar Canadense",
+        "CHF" => "Franco Suíço",
+        "CNY" => "Yuan Chinês",
+        "ARS" => "Peso Argentino",
+        "MXN" => "Peso Mexicano",
+        "ZAR" => "Rand Sul-Africano"
+    ];
+
+    // Busca o nome da moeda pelo código.
+    // Se não encontrar, mantém apenas a sigla informada.
+    $nomeMoedaDestino = isset($nomesMoedas[$moedaDestino]) ?
+        $nomesMoedas[$moedaDestino] : $moedaDestino;
+
+    // Verifica se o valor informado é maior que zero
+    if ($valor <= 0) {
+        return ["erro" => "Informe um valor em Real maior que zero."];
+    } 
+    // Verifica se alguma moeda foi escolhida
+    elseif (empty($moedaDestino)) {
+        return ["erro" => "Selecione uma moeda para conversão."];
+    }
+
+    // Retorna um array com os dados validados
+    return [
+        "erro" => "", // Nenhum erro
+        "valor" => $valor, // Valor informado em R$
+        "moedaDestino" => $moedaDestino, // Código da moeda destino
+        "nomeMoedaDestino" => $nomeMoedaDestino // Nome completo da moeda destino
+    ];
+}
+
+
+// Função para exibir mensagem
+function exibirMensagem($erro, $valor, $nomeMoedaDestino, $taxa, $moedaDestino, $resultado) {
+    // Caso exista algum erro, exibe mensagem de erro
+    if ($erro) {
+        return "<p class='error-message'>{$erro}</p>";
+    } 
+    // Caso contrário, exibe os resultados da conversão
+    else {
+        return "
+            <p>Valor em Real: <strong>R$ " . number_format($valor, 2, ',', '.') . "</strong></p>
+            <p>Moeda de destino: <strong>" . htmlspecialchars($nomeMoedaDestino) . "</strong></p>
+            <p>Taxa de câmbio: <strong>{$taxa}</strong></p>
+            <p>Valor convertido: <strong>{$moedaDestino} " . number_format($resultado, 2, ',', '.') . "</strong></p>
+        ";
+    }
+}
+
+
+// Captura o valor enviado no formulário.
+// Se não for informado, assume 0.
+$valor = isset($_GET['n_valor']) ? floatval($_GET['n_valor']) : 0;
+
+// Captura a moeda selecionada no campo de opções.
+// Se não for informado, assume vazio.
+$moeda = isset($_GET['n_moeda']) ? $_GET['n_moeda'] : '';
+
+// Captura a moeda personalizada digitada pelo usuário.
+// Se não for informado, assume vazio.
+$outraMoeda = isset($_GET['n_outrasMoeda']) ? $_GET['n_outrasMoeda'] : '';
+
+// Chama a função de validação de entradas
+$validacao = validarEntradas($valor, $moeda, $outraMoeda);
+
+// Armazena mensagens de erro (se houver)
+$erro = $validacao['erro']; 
+// Taxa de câmbio inicializada como 0
+$taxa = 0; 
+// Resultado da conversão inicializado como 0                 
+$resultado = 0;   
+// Nome completo da moeda destino         
+$nomeMoedaDestino = $validacao['nomeMoedaDestino'] ?? ''; 
+// Sigla da moeda destino
+$moedaDestino = $validacao['moedaDestino'] ?? '';         
+
+// Se não houver erro de validação
+if (!$erro) {
+    // URL da API de câmbio com base no Real (BRL)
+    $url = "https://open.er-api.com/v6/latest/BRL";
+
+    // Faz a requisição dos dados da API
+    $json = @file_get_contents($url);
+
+    // Verifica se houve resposta válida
+    if ($json !== false) {
+        // Transforma o JSON em array
+        $dados = json_decode($json, true);
+
+        // Verifica se a moeda escolhida existe na lista de taxas retornada pela API
+        if (isset($dados['rates'][$moedaDestino])) {
+            // Recupera a taxa de câmbio
+            $taxa = $dados['rates'][$moedaDestino];
+
+            // Calcula o valor convertido
+            $resultado = $valor * $taxa;
+        } else {
+            // Caso a moeda não exista na resposta da API
+            $erro = "Moeda não encontrada na API.";
+        }
+    } else {
+        // Caso não consiga conectar à API
+        $erro = "Erro ao acessar a API de câmbio.";
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"> 
+    <title>Resultado da Conversão</title> 
+    <link rel="stylesheet" href="./../css/style.css"> 
+</head>
+<body>
+    <main class="container">
+        <h2>Resultado da Conversão</h2> 
+        
+        <!-- Exibe a mensagem de erro ou os resultados da conversão -->
+        <?= exibirMensagem($erro, $valor, $nomeMoedaDestino, $taxa, $moedaDestino, $resultado) ?>
+        
+        <!-- Link para voltar à página inicial -->
+        <a href="../index.html" class="btn-voltar">&#8592; Nova conversão</a>
+    </main>
+</body>
+</html>

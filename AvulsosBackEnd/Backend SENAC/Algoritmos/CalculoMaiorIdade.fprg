@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CalculoMaiorIdade"/>
+        <attribute name="authors" value="monica.sdomingos1"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-08-27 04:33:59 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMjc7IjAyOjE3OjQ4ICI7Mzc4Nw=="/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMjc7IjA0OjMzOjU5ICI7MTszODk3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nome" type="String" array="False" size=""/>
+            <declare name="anoNascimento, idadeAtual" type="Integer" array="False" size=""/>
+            <output expression="&quot;Digite seu nome: &quot;" newline="True"/>
+            <input variable="nome"/>
+            <output expression="&quot;Digite o ano de nascimento: &quot;" newline="True"/>
+            <input variable="anoNascimento"/>
+            <assign variable="idadeAtual" expression="2025 - anoNascimento"/>
+            <if expression="idadeAtual &gt;= 18">
+                <then>
+                    <output expression="&quot;O usu&#225;rio &quot; &amp; nome &amp; &quot; tem &quot; &amp; idadeAtual &amp; &quot; anos e &#233; maior de idade.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;O usu&#225;rio &quot; &amp; nome &amp; &quot; tem &quot; &amp; idadeAtual &amp; &quot; anos e &#233; menor de idade.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

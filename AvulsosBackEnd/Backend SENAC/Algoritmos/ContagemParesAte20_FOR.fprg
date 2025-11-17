@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ContagemParesAte20"/>
+        <attribute name="authors" value=""/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-01 02:26:31 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDE7IjAyOjExOjI5ICI7Mzc3Mw=="/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDE7IjAyOjI2OjMxICI7MTszODgw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <for variable="contador" start="0" end="20" direction="inc" step="2">
+                <output expression="contador" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

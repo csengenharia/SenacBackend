@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CalculoFahrenheit"/>
+        <attribute name="authors" value="monica.sdomingos1"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-08-19 03:06:05 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMTk7IjAyOjU0OjUxICI7Mzc4Mw=="/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMTk7IjAzOjA2OjA1ICI7MjszODg5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="celcius, fahrenheit" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe a temperatura em Celcius: &quot;" newline="True"/>
+            <input variable="celcius"/>
+            <assign variable="fahrenheit" expression="(celcius * 1.8) + 32"/>
+            <output expression="&quot;A temperatura em fahrenheit &#233;: &quot; &amp;fahrenheit" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

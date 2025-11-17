@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CompraDesconto"/>
+        <attribute name="authors" value="monica.sdomingos1"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-08-26 03:11:17 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMjY7IjAyOjAwOjQ0ICI7Mzc3NA=="/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMjY7IjAzOjExOjE3ICI7MjszODg2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nomeCliente" type="String" array="False" size=""/>
+            <declare name="valorMercadoria, valorApagar, descontoVip, tipoCliente" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe o nome do cliente&quot;" newline="True"/>
+            <input variable="nomeCliente"/>
+            <output expression="&quot;Informe o valor da mercadoria&quot;" newline="True"/>
+            <input variable="valorMercadoria"/>
+            <output expression="&quot;Se o cliente for COMUM digite 1 e se for VIP digite 2: &quot;" newline="True"/>
+            <input variable="tipoCliente"/>
+            <if expression="tipoCliente=1">
+                <then>
+                    <assign variable="valorApagar" expression="valorMercadoria"/>
+                    <output expression="&quot;O cliente COMUM &quot; &amp; nomeCliente &amp; &quot; pagar&#225; R$ &quot; &amp; valorApagar" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="descontoVip" expression="valorMercadoria*0.10"/>
+                    <assign variable="valorApagar" expression="valorMercadoria-descontoVip"/>
+                    <output expression="&quot;O cliente VIP &quot; &amp; nomeCliente  &amp; &quot; pagar&#225; R$ &quot; &amp; valorApagar" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

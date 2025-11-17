@@ -1,0 +1,38 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f8e1e0;
+    margin: 0;
+    padding: 20px;
+}
+
+
+div , h2{
+    display: flex;
+    justify-content:center;
+    gap:8px;
+}
+ 
+#cep-buscado {
+    width:40%;
+    gap:12px;
+    margin: auto;
+    flex-direction: column;
+    justify-content:center;
+}
+ 
+label{
+    width:16%;
+}
+ 
+input{
+    width: 40%;
+  
+}
+ 
+#error{
+    color: red;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+    
+}

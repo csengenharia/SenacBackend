@@ -1,0 +1,313 @@
+body {
+    background: linear-gradient(to right, #e0e0e0, #222222);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #444;
+}
+
+.navbar {
+    margin-bottom: 30px;
+    background-color: #333333 !important;
+    border-bottom: 2px solid #e74c3c;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand {
+    color: #f8f9fa !important;
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Estilos para os cards principais que são compartilhados */
+.card-login,
+.card-abrir-chamado,
+.card-consultar-chamado,
+.card-edit-chamado,
+.card-home-summary {
+    padding: 40px;
+    width: 450px; /* Largura padrão, ajustada por classes específicas */
+    max-width: 95%;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(231, 76, 60, 0.6);
+    color: #e0e0e0;
+}
+
+.card-header {
+    background-color: #e74c3c;
+    color: #f8f9fa;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-bottom: none;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.form-group label {
+    color: #FFD700;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.form-control {
+    border-radius: 30px;
+    padding: 14px 25px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid #000000;
+    color: #333333; /* Ajustado para melhor legibilidade */
+    transition: all 0.3s ease;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 0.3rem rgba(231, 76, 60, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #333333;
+    outline: none;
+}
+
+.form-control option {
+    background-color: #222222;
+    color: #f8f9fa;
+    padding: 8px 15px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.form-control option:checked,
+.form-control option:hover {
+    background-color: #e74c3c;
+    color: #f8f9fa;
+}
+
+.text-primary a {
+    color: #e0e0e0 !important;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.text-primary a:hover {
+    color: #e74c3c !important;
+    text-decoration: underline;
+}
+
+.btn-info,
+.btn-warning,
+.btn-secondary,
+.btn-success,
+.btn-danger {
+    border-radius: 30px;
+    font-weight: bold;
+    padding: 12px 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-info {
+    background-color: #e74c3c !important;
+    border-color: #e74c3c !important;
+    color: #f8f9fa !important;
+}
+
+.btn-info:hover {
+    background-color: #c0392b !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-warning {
+    background-color: #f39c12 !important;
+    border-color: #f39c12 !important;
+    color: #f8f9fa !important;
+}
+
+.btn-warning:hover {
+    background-color: #e67e22 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #f8f9fa !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-success {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: #ffffff !important;
+}
+.btn-success:hover {
+    background-color: #218838 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-danger {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: #ffffff !important;
+}
+.btn-danger:hover {
+    background-color: #c82333 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.text-success, .text-danger {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.text-success {
+    background-color: rgba(39, 174, 96, 0.85);
+    border: 1px solid rgba(39, 174, 96, 1);
+}
+
+.text-danger {
+    background-color: rgba(231, 76, 60, 0.85);
+    border: 1px solid rgba(231, 76, 60, 1);
+}
+
+.no-chamados-message {
+    color: #f8f9fa;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin-top: 30px;
+    border: 1px dashed rgba(231, 76, 60, 0.5);
+}
+
+/* Media queries para responsividade global */
+@media (max-width: 768px) {
+    .card-login,
+    .card-abrir-chamado,
+    .card-consultar-chamado,
+    .card-edit-chamado,
+    .card-home-summary {
+        padding: 25px;
+        width: 100%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        box-shadow: none;
+    }
+    .admin-table-container {
+        border-radius: 0;
+        box-shadow: none;
+        border-left: none;
+        border-right: none;
+        margin: 0;
+    }
+    body {
+        justify-content: flex-start;
+        padding-top: 15px;
+    }
+    .navbar {
+        margin-bottom: 0;
+        border-bottom: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    .card-header {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+    .form-control {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+    .btn-info, .btn-warning, .btn-secondary, .btn-success, .btn-danger {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .custom-table-responsive {
+        padding: 10px;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+    .custom-admin-table th, .custom-admin-table td {
+        padding: 8px 4px;
+        font-size: 0.8em;
+    }
+    .hide-on-small {
+      display: none !important;
+    }
+    .hide-on-extra-small {
+      display: none !important;
+    }
+    .hide-on-very-small {
+      display: none !important;
+    }
+    .btn-action {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-body img {
+        width: 100px;
+    }
+    .card-header {
+        font-size: 1.3rem;
+    }
+}

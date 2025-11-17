@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value="Faixa Etária e Acesso"/>
+        <attribute name="authors" value="ChatGPT"/>
+        <attribute name="about" value="Programa que verifica faixa etária e acesso"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nome" type="String" array="False" size=""/>
+            <declare name="idade" type="Integer" array="False" size=""/>
+            <declare name="faixa" type="String" array="False" size=""/>
+            <output expression="&quot;Digite seu nome:&quot;" newline="True"/>
+            <input variable="nome"/>
+            <output expression="&quot;Digite sua idade:&quot;" newline="True"/>
+            <input variable="idade"/>
+
+            <!-- Determinar faixa etária -->
+            <if expression="idade &lt; 12">
+                <then>
+                    <assign variable="faixa" expression="&quot;Criança&quot;"/>
+                </then>
+                <else>
+                    <if expression="idade &lt;= 18">
+                        <then>
+                            <assign variable="faixa" expression="&quot;Adolescente&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="idade &lt;= 25">
+                                <then>
+                                    <assign variable="faixa" expression="&quot;Jovem&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="idade &lt;= 60">
+                                        <then>
+                                            <assign variable="faixa" expression="&quot;Adulto&quot;"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="faixa" expression="&quot;Melhor idade&quot;"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+
+            <!-- Mostrar nome, idade e faixa -->
+            <output expression="&quot;Nome: &quot; + nome" newline="True"/>
+            <output expression="&quot;Idade: &quot; + idade" newline="True"/>
+            <output expression="&quot;Faixa etária: &quot; + faixa" newline="True"/>
+
+            <!-- Verificar acesso -->
+            <if expression="idade &gt;= 18">
+                <then>
+                    <output expression="&quot;Bem-vindo, &quot; + nome + &quot;!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Acesso Negado! Apenas maiores de 18 podem ingressar!&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

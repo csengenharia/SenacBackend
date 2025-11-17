@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CalculoImpostoRenda"/>
+        <attribute name="authors" value="monica.sdomingos1"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-08-27 02:08:43 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMTk7IjAyOjM5OjUzICI7Mzc4OA=="/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMjc7IjAyOjA4OjQzICI7MzszODky"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nome" type="String" array="False" size=""/>
+            <declare name="rendaMensal, valorImposto" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe o nome do contribuinte: &quot;" newline="True"/>
+            <input variable="nome"/>
+            <output expression="&quot;Informe sua renda mensal: &quot;" newline="True"/>
+            <input variable="rendaMensal"/>
+            <assign variable="valorImposto" expression="rendaMensal*0.075"/>
+            <output expression="&quot;Para o contribuinte &quot; &amp; nome &amp; &quot; o valor total de imposto a ser pago &#233; R$ &quot; &amp; valorImposto" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+<main class="container">
+    <h2>Conversor de Moedas</h2>
+    <form action="./pages/conversao.php" method="get">
+        <label for="lb_real">Valor em Real:</label>
+        <input type="number" name="n_valor" id="id_valor">
+
+        <label for="moeda">Selecionar Moeda (Dólar ou Euro):</label>
+        <select name="n_moeda" id="id_moeda">
+            <option value="USD">Dólar</option>
+            <option value="EUR">Euro</option>
+        </select>
+
+        <label for="lb_outrasMoedas">Selecione outra moeda:</label>
+        <select name="n_outrasMoeda" id="id _outrasMoedas">
+            <option value="">Nenhuma</option>
+            <option value="GBP">Libra Esterlina</option>
+            <option value="JPY">Iene Japonês</option>
+            <option value="AUD">Dólar Australiano</option>
+            <option value="CAD">Dólar Canadense</option>
+            <option value="CHF">Franco Suíço</option>
+            <option value="CNY">Yuan Chinês</option>
+            <option value="ARS">Peso Argentino</option>
+            <option value="MXN">Peso Mexicano</option>s
+            <option value="ZAR">Rand Sul-Africano</option>    
+        </select>
+
+        <input type="submit" value="Converter Valor">
+    </form>
+</main>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Conversor Celsius → Fahrenheit</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Conversor de Temperatura</h1>
+        <form action="./pages/fahrenheit.php" method="post">
+            <div class="form-group">
+                <label for="celsius">Temperatura em Celsius (°C):</label>
+                <input type="number" name="celsius" id="celsius" step="0.1" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Converter</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

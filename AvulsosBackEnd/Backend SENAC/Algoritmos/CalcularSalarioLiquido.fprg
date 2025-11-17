@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CalcularSalarioLiquido"/>
+        <attribute name="authors" value="monica.sdomingos1"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-03 05:05:33 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDM7IjAxOjUzOjUzICI7Mzc3Nw=="/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDM7IjA1OjA1OjMzICI7MTszODg0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="salarioLiquido, valorHora, qtdeHora, totalImposto, salarioBruto" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe o valor da hora trabalhada R$: &quot;" newline="True"/>
+            <input variable="valorHora"/>
+            <output expression="&quot;Informe a quantidade de horas trabalhadas no m&#234;s: &quot;" newline="True"/>
+            <input variable="qtdeHora"/>
+            <assign variable="salarioLiquido" expression="valorHora*qtdeHora"/>
+            <if expression="salarioLiquido &gt;= 2000">
+                <then>
+                    <assign variable="totalImposto" expression="salarioLiquido * 0.05"/>
+                    <assign variable="salarioLiquido" expression="salarioLiquido - totalImposto"/>
+                    <output expression="&quot;O sal&#225;rio l&#237;quido final ser&#225; de R$ &quot; &amp; salarioLiquido &amp; &quot; com desconto de imposto de 5% no valor de R$ &quot; &amp; totalImposto" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;O sal&#225;rio l&#237;quido do m&#234;s isento de imposto &#233; de R$: &quot; &amp; salarioLiquido" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

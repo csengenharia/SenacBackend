@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CalculoMediaNotas"/>
+        <attribute name="authors" value="monica.sdomingos1"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-08-13 02:59:16 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMTM7IjAxOjU2OjUzICI7Mzc4MA=="/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMTM7IjAyOjU5OjE2ICI7MTszODkx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="aluno" type="String" array="False" size=""/>
+            <declare name="n1, n2, n3, n4, media" type="Real" array="False" size=""/>
+            <output expression="&quot;Digite o nome do aluno:&quot;" newline="True"/>
+            <input variable="aluno"/>
+            <output expression="&quot;Informe a primeira nota:&quot;" newline="True"/>
+            <input variable="n1"/>
+            <output expression="&quot;Informe a segunda nota:&quot;" newline="True"/>
+            <input variable="n2"/>
+            <output expression="&quot;Informe a terceira nota:&quot;" newline="True"/>
+            <input variable="n3"/>
+            <output expression="&quot;Informe a quarta nota:&quot;" newline="True"/>
+            <input variable="n4"/>
+            <assign variable="media" expression="(n1+n2+n3+n4)/4"/>
+            <output expression="&quot;A media do aluno &#233; &quot; &amp; media" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ContagemInicioFim"/>
+        <attribute name="authors" value="monica.sdomingos1"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-02 03:00:31 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDI7IjAyOjE5OjQyICI7Mzc3Nw=="/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDI7IjAzOjAwOjMxICI7MjszODc1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="starter, passos, valorFinal, contador" type="Integer" array="False" size=""/>
+            <output expression="&quot;Insira um n&#250;mero inicial:&quot;" newline="True"/>
+            <input variable="starter"/>
+            <output expression="&quot;Insira o n&#250;mero final: &quot;" newline="True"/>
+            <input variable="valorFinal"/>
+            <output expression="&quot;A quantos passos deseja?&quot;" newline="True"/>
+            <input variable="passos"/>
+            <for variable="contador" start="starter" end="valorFinal" direction="inc" step="passos">
+                <if expression="contador = starter">
+                    <then>
+                        <output expression="contador &amp; &quot;-IN&#205;CIO&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <if expression="contador + passos &gt; valorFinal">
+                            <then>
+                                <output expression="contador &amp; &quot;- FIM&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="contador" newline="True"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

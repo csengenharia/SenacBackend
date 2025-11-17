@@ -1,0 +1,157 @@
+
+Modelagem de dados
+Entendimento dos requisitos do sistema:
+- entrevistas
+- Reuniões
+- Modelo conceitual/Dominio
+
+Representação visual
+- mini mundo
+- abstração
+
+conceitos básicos para modelagem de banco de dados
+- entidades
+- atributos
+- tipos de atributos
+
+Que entidades teríamos em sistema de gestão de consultas em uma clínica veterinária, cite 3.
+
+1. VETERINÁRIO: 
+   - Nome veterinário;  
+   - CRMV  (Registro no Conselho Regional de Medicina Veterinária); 
+   - Especialidade
+
+2. TUTOR: 
+   - Nome tutor; 
+   - Telefone ; 
+   - Email
+
+3. PROCEDIMENTO: 
+   - Nome procedimento ; 
+   - Custo procedimento ; 
+   - Duracao_estimada_min
+
+
+CLÍNICA: 
+- nome clinica 
+- endereço
+- telefone_contato
+
+VETERINÁRIO: 
+- nome veterinário 
+- crmv (Registro no Conselho Regional de Medicina Veterinária)
+- especialidade
+
+TUTOR: 
+- nome tutor 
+- telefone 
+- email
+
+ANIMAL: 
+- nome animal
+- data nascimento; 
+- peso_kg
+
+RAÇA:
+- nome raça
+- porte (Pequeno, Médio, Grande)
+- media_expectativa_vida
+
+ESPECIE: 
+- nome espécie
+- habitat natural
+- dieta_tipica
+
+PRODUTO: 
+- nome produto
+- preco_venda 
+- quantidade estoque
+
+FORNECEDOR: 
+- nome fornecedor; 
+- CNPJ
+- telefone contato
+
+FUNCIONARIO: 
+- nome funcionário
+- funcao (Recepcionista, Auxiliar, etc.)
+- data contratação
+
+SALA: 
+- numero sala
+- capacidade máxima  
+- tipo_uso (Consultório, Sala de Cirurgia)
+
+CONSULTA: 
+- data hora 
+- motivo consulta  
+- diagnostico
+
+PROCEDIMENTO: 
+- nome procedimento  
+- custo procedimento 
+- duracao_estimada_min
+
+AGENDAMENTO: 
+- data agendamento
+- hora agendamento 
+- status_agendamento (Confirmado, Cancelado, Remarcado)
+
+PRONTUARIO: 
+- data registro
+- historico_medico 
+- observacoes_gerais
+
+RECEITA_MEDICA: 
+- data emissão
+- medicamento prescrito
+- dosagem_instrucoes
+
+TRATAMENTO: 
+- nome tratamento
+- data_inicio
+- data_fim_prevista
+
+PAGAMENTO: 
+- data pagamento
+- valor total
+- metodo_pagamento (Cartão de Crédito, Dinheiro, Pix)
+
+LAUDO: 
+- data laudo
+- descricao_exame
+- resultado_laudo
+
+VACINA: 
+- nome vacina 
+- data_aplicacao
+- proxima_dose_prevista
+
+RELATORIO:
+- tipo_relatorio (Financeiro, Atendimentos, etc.)
+- data_geracao
+- periodo_cobertura
+
+
+Aluguel de itens de praia:
+
+
+PEDIDO
+- 
+
+
+PRODUTO
+- tipo de equipamento
+- preço
+- 
+
+
+COMPRADOR
+- nome
+- endereço
+- telefone
+
+
+
+
+

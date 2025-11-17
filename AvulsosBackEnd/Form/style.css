@@ -1,0 +1,110 @@
+/* Reset básico — remove estilos padrões dos navegadores */
+* {
+  margin: 0; /* Remove todas as margens externas */
+  padding: 0; /* Remove todos os espaçamentos internos */
+  box-sizing: border-box; /* Faz com que padding e borda sejam incluídos no tamanho total dos elementos */
+}
+
+/* Estilo geral do corpo da página */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Define a fonte padrão da página */
+  background: linear-gradient(135deg, #0d47a1, #42a5f5); /* Cria um fundo com gradiente azul em 135 graus */
+  color: #333; /* Define a cor padrão do texto */
+  display: flex; /* Usa o Flexbox para centralizar o conteúdo */
+  align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+  justify-content: center; /* Alinha o conteúdo horizontalmente ao centro */
+  height: 100vh; /* Define a altura da tela (100% da viewport) */
+}
+
+/* Container principal do formulário */
+.container {
+  background-color: #fff; /* Define o fundo branco para o formulário */
+  padding: 30px 40px; /* Adiciona espaçamento interno (30px em cima e embaixo, 40px nas laterais) */
+  border-radius: 12px; /* Arredonda os cantos do formulário */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15); /* Cria uma sombra suave ao redor da caixa */
+  width: 100%; /* Faz o container ocupar toda a largura possível */
+  max-width: 450px; /* Limita a largura máxima a 450px */
+}
+
+/* Título principal dentro do container */
+.container h1 {
+  text-align: center; /* Centraliza o título horizontalmente */
+  color: #0d47a1; /* Define a cor azul para o título */
+  margin-bottom: 10px; /* Adiciona espaço abaixo do título */
+}
+
+/* Parágrafo logo abaixo do título */
+.container p {
+  text-align: center; /* Centraliza o texto do parágrafo */
+  margin-bottom: 20px; /* Espaço abaixo do parágrafo */
+  font-size: 14px; /* Tamanho da fonte */
+  color: #666; /* Cor cinza para o texto */
+}
+
+/* Estilo para todos os rótulos (labels) do formulário */
+form label {
+  display: block; /* Faz o label ocupar toda a linha (um embaixo do outro) */
+  margin-bottom: 6px; /* Adiciona um pequeno espaço abaixo do texto do label */
+  font-weight: 600; /* Deixa o texto do label mais espesso */
+  font-size: 14px; /* Define o tamanho da fonte */
+  color: #333; /* Cor escura para o texto */
+}
+
+/* Estilo aplicado a todos os campos de entrada, seleção e área de texto */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%; /* O campo ocupa toda a largura disponível do container */
+  padding: 10px; /* Espaçamento interno para o texto não encostar nas bordas */
+  border: 1px solid #ccc; /* Cria uma borda cinza clara */
+  border-radius: 8px; /* Arredonda as bordas dos campos */
+  margin-bottom: 15px; /* Espaço abaixo de cada campo */
+  font-size: 14px; /* Define o tamanho do texto digitado */
+  transition: 0.3s; /* Define uma transição suave para os efeitos de foco */
+}
+
+/* Efeito quando o usuário clica em um campo (foco) */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0d47a1; /* Muda a cor da borda para azul */
+  outline: none; /* Remove o contorno padrão do navegador */
+  box-shadow: 0 0 5px rgba(13, 71, 161, 0.3); /* Adiciona uma leve sombra azul ao redor do campo */
+}
+
+/* Agrupamento dos botões de rádio (radio buttons) */
+.radio-group {
+  display: flex; /* Coloca os botões lado a lado */
+  gap: 15px; /* Define o espaçamento entre cada botão */
+  margin-bottom: 15px; /* Espaço abaixo do grupo */
+}
+
+/* Estilo para o checkbox (Aceito os termos) */
+.checkbox {
+  display: flex; /* Alinha o checkbox e o texto lado a lado */
+  align-items: center; /* Centraliza verticalmente o texto e o checkbox */
+  font-size: 14px; /* Define o tamanho da fonte */
+  margin-bottom: 20px; /* Espaço abaixo do checkbox */
+}
+
+/* Estilo do botão de envio do formulário */
+button {
+  background-color: #0d47a1; /* Cor azul escura de fundo */
+  color: white; /* Texto branco */
+  border: none; /* Remove qualquer borda padrão */
+  padding: 12px; /* Tamanho interno do botão */
+  border-radius: 8px; /* Arredonda as bordas do botão */
+  width: 100%; /* Faz o botão ocupar toda a largura disponível */
+  font-size: 16px; /* Define o tamanho da fonte do botão */
+  cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse */
+  transition: 0.3s; /* Adiciona uma transição suave para efeitos */
+}
+
+/* Efeito quando o mouse passa sobre o botão */
+button:hover {
+  background-color: #1565c0; /* Muda a cor de fundo para um azul mais claro */
+}

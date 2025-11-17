@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Salário -  Imposto 5%</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>Cálculo de Salário Líquido - Imposto 5% ou Isenção</h1>
+    <p>Vamos contar desde o valor inicial até o final do usuário</p>
+<form action="./pages/calculoSalario.php" method="get">    
+    <label>Informe o valor da hora trabalhada R$: </label>
+    <input type="number" name="valorHora" id="valorHora" placeholder="Valor da hora">
+
+    <label>Informe a quantidade de horas trabalhadas no mês: </label>
+    <input type="number" name="qtdeHora" id="qtdeHora" placeholder="Horas trabalhadas">
+    <div>
+       <input type="submit" value="Executar Cálculo">
+       
+    </div>
+</form>
+</body>
+</html>

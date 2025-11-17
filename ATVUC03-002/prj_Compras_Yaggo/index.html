@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title> Compras </title>
+</head>
+
+<body>
+    <h1> Compra de Mercadoria</h1>
+    <form action="./pages/desconto.php" method="post">
+        <div>
+            <label for="cliente"> Informe o nome do cliente: </label>
+            <input type="text" name="nome" id="cliente" required>
+        </div>
+
+        <div>
+            <label for="mercadoria"> Informe o valor da mercadoria: </label>
+            <input type="text" name="valormercadoria" id="mercadoria" required>
+        </div>
+
+         <div>
+            <label for="tipocliente"> Se o cliente for COMUM digite 1 e se o cliente for VIP digite 2: </label>
+            <input type="text" name="tipo" id="tipocliente" required>
+        </div>
+        <!-- Submit para enviar para o backend -->
+        <div>
+            <imput type="submit" value="Calcular">
+                <button type="submit"> Calcular o Valor da Compra </button>
+        </div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("Letra da música: Ciranda, Cirandinha \n");
+Console.ResetColor();
+
+Console.WriteLine("Ciranda, cirandinha");
+Console.WriteLine("Vamos todos cirandar\n");
+
+
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Vamos dar a meia-volta");
+Console.WriteLine("Volta e meia vamos dar\n");
+Console.ResetColor();
+
+Console.WriteLine("O anel que tu me deste");
+Console.WriteLine("Era vidro e se quebrou\n");
+
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine("Vamos dar a meia-volta");
+Console.WriteLine("Volta e meia vamos dar\n");
+Console.ResetColor();

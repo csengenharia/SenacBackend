@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="CalculoPerimetroTriangulo"/>
+        <attribute name="authors" value="monica.sdomingos1"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-08-19 02:21:39 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMTk7IjAyOjAwOjEyICI7Mzc3MQ=="/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDgtMTk7IjAyOjIxOjM5ICI7MTszODkx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ladoA, ladoB, ladoC, totalPerimetro" type="Real" array="False" size=""/>
+            <output expression="&quot;Digite o comprimento do primeiro lado: &quot;" newline="True"/>
+            <input variable="ladoA"/>
+            <output expression="&quot;Digite o comprimento do segundo lado: &quot;" newline="True"/>
+            <input variable="ladoB"/>
+            <output expression="&quot;Digite o comprimento do terceiro lado: &quot;" newline="True"/>
+            <input variable="ladoC"/>
+            <assign variable="totalPerimetro" expression="ladoA+ladoB+ladoC"/>
+            <output expression="&quot;O total do per&#237;metro do tri&#226;ngulo &#233;: &quot; &amp;totalPerimetro" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

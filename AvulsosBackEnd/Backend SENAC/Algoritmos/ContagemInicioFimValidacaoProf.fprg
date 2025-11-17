@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ContagemInicioFim"/>
+        <attribute name="authors" value="monica.sdomingos1"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-02 04:38:28 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDI7IjAyOjE5OjQyICI7Mzc3Nw=="/>
+        <attribute name="edited" value="YXJsZXkuc2F1Z3VzdG87U0FOMDcxNzQ2MVcxMS0xOzIwMjUtMDktMDI7IjA0OjMyOjU5ICI7NDszNjU0"/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDI7IjA0OjM4OjI4ICI7MzszODk0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="starter, passos, valorFinal, contador" type="Integer" array="False" size=""/>
+            <output expression="&quot;Insira um n&#250;mero inicial:&quot;" newline="True"/>
+            <input variable="starter"/>
+            <output expression="&quot;Insira o n&#250;mero final: &quot;" newline="True"/>
+            <input variable="valorFinal"/>
+            <while expression="valorFinal&lt;=starter">
+                <output expression="&quot;ERRO! O n&#250;mero final deve ser maior que o n&#250;mero inicial. Digite um n&#250;mero novamente: &quot;" newline="True"/>
+                <input variable="valorFinal"/>
+            </while>
+            <output expression="&quot;A quantos passos deseja?&quot;" newline="True"/>
+            <input variable="passos"/>
+            <while expression="passos&lt;=0 || passos &gt; valorFinal - starter">
+                <output expression="&quot;ERRO - A quantos passos deseja?&quot;" newline="True"/>
+                <input variable="passos"/>
+            </while>
+            <assign variable="contador" expression="starter"/>
+            <output expression="contador &amp; &quot;-IN&#205;CIO&quot;" newline="True"/>
+            <for variable="contador" start="starter+passos" end="valorFinal-passos" direction="inc" step="passos">
+                <output expression="contador" newline="True"/>
+            </for>
+            <output expression="contador &amp; &quot;- FIM&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

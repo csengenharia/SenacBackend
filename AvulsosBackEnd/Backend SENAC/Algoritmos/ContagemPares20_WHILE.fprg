@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ContagemPares20_WHILE"/>
+        <attribute name="authors" value="monica.sdomingos1"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-01 03:26:51 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDE7IjAzOjIwOjIxICI7Mzc2Ng=="/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDE7IjAzOjI2OjUxICI7MTszODgz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <while expression="contador &lt;= 20">
+                <output expression="contador" newline="True"/>
+                <assign variable="contador" expression="contador + 2"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

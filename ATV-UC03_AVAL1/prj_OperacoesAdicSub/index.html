@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adição e Subtração</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calcula Operações Adição e Subtração</h1>
+        <p class="description">Digite um número de 1 a 10:</p>
+        
+        <form action="./pages/operacaoAdiSub.php" method="GET" class="form">
+            <div class="input-group">
+                <label for="numero">Número:</label>
+                <input type="number" id="numero" name="numero" step="any" required placeholder="Digite um número">
+            </div>
+            
+            <div class="input-group">
+                <label for="operacao">Operação:</label>
+                <select id="operacao" name="operacao" required>
+                    <option value="">Selecione uma operação</option>
+                    <option value="adicao">Adição (+)</option>
+                    <option value="subtracao">Subtração (-)</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn-submit">Calcular</button>
+        </form>
+        
+        </div>
+    </div>
+</body>
+</html>

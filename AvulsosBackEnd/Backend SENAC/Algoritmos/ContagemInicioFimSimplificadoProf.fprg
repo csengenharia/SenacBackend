@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ContagemInicioFim"/>
+        <attribute name="authors" value="monica.sdomingos1"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-02 03:28:53 "/>
+        <attribute name="created" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDI7IjAyOjE5OjQyICI7Mzc3Nw=="/>
+        <attribute name="edited" value="bW9uaWNhLnNkb21pbmdvczE7U0FOMDY3NDM5OVcxMS0xOzIwMjUtMDktMDI7IjAzOjAwOjMxICI7MjszODc1"/>
+        <attribute name="edited" value="YXJsZXkuc2F1Z3VzdG87U0FOMDcxNzQ2MVcxMS0xOzIwMjUtMDktMDI7IjAzOjI4OjUzICI7MjszNjUw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="starter, passos, valorFinal, contador" type="Integer" array="False" size=""/>
+            <output expression="&quot;Insira um n&#250;mero inicial:&quot;" newline="True"/>
+            <input variable="starter"/>
+            <output expression="&quot;Insira o n&#250;mero final: &quot;" newline="True"/>
+            <input variable="valorFinal"/>
+            <output expression="&quot;A quantos passos deseja?&quot;" newline="True"/>
+            <input variable="passos"/>
+            <assign variable="contador" expression="starter"/>
+            <output expression="contador &amp; &quot;-IN&#205;CIO&quot;" newline="True"/>
+            <for variable="contador" start="starter+passos" end="valorFinal-passos" direction="inc" step="passos">
+                <output expression="contador" newline="True"/>
+            </for>
+            <output expression="contador &amp; &quot;- FIM&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
