@@ -1,0 +1,192 @@
+/* ======== ESTILOS GERAIS ======== */
+body {
+    margin: 0;
+    font-family: 'Open Sans', 'Asap', sans-serif;
+    color: #3b2212;
+    background-color: #f8f5ea;
+    text-align: center;
+}
+
+/* ======== CABEÇALHO ======== */
+.cabecalho {
+    background-color: #f0ebdc;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    min-height: 90px;
+    position: relative;
+}
+
+/* Logo */
+.cabecalho .logo img {
+    height: 100px;
+}
+
+/* Container dos menus */
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Menu superior (Cadastrar / Login) */
+.nav-menu > ul:first-child {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu > ul:first-child a {
+    text-decoration: none;
+    padding: 7px 15px;
+    margin-left: 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: #3b2212;
+    background-color: #ebb860;
+    border: 1px solid #ebb860;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.nav-menu > ul:first-child a:hover {
+    border: 1px solid #eca0a2;
+    background-color: #eca0a2;
+}
+
+/* Menu principal (Início, Cartas, etc) */
+.nav-menu > ul:last-child {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-menu > ul:last-child li {
+    padding: 0 30px;
+    position: relative;
+}
+
+.nav-menu > ul:last-child li:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3b2212;
+}
+
+.nav-menu > ul:last-child a {
+    text-decoration: none;
+    color: #3b2212;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-menu > ul:last-child a:hover {
+    color: #eca0a2;
+}
+
+/* Linha marrom abaixo do cabeçalho */
+.linha-inferior {
+    height: 15px;
+    background-color: #5d4037;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+/* ======== BOTÕES PADRÃO ======== */
+.botao, button, input[type="submit"] {
+    display: inline-block;
+    padding: 10px 25px;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #3b2212;
+    background-color: #ebb860;
+    border: 1px solid #ebb860;
+    border-radius: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.botao:hover, button:hover, input[type="submit"]:hover {
+    background-color: #eca0a2;
+    border-color: #eca0a2;
+    transform: scale(1.03);
+}
+
+/* ======== FORMULÁRIOS ======== */
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: left;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #d1c4ae;
+    font-size: 15px;
+}
+
+/* ======== CARTAS RECEBIDAS ======== */
+.carta {
+    background: white;
+    border: 1px solid #d1c4ae;
+    padding: 15px;
+    margin: 15px auto;
+    width: 70%;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+/* ======== RODAPÉ ======== */
+.rodape {
+    background-color: #f0ebdc;
+    color: #3b2212;
+    padding: 30px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+    .nav-menu > ul:last-child {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+    }
+    form {
+        width: 90%;
+    }
+    .carta {
+        width: 90%;
+    }
+}
