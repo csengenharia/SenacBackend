@@ -1,30 +1,53 @@
 <?php
 require_once "conexao.php";
 
+$mensagem = ''; 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
-    $cpf = $_POST["cpf"];
+    $cpf = preg_replace('/[^0-9]/', '', $_POST["cpf"]); 
     $endereco = $_POST["endereco"];
     $cidade = $_POST["cidade"];
     $bairro = $_POST["bairro"];
 
     if (!empty($nome) && !empty($cpf)) {
-        $sql = "INSERT INTO clientes (nome, cpf, endereco, cidade, bairro)
-                VALUES (:nome, :cpf, :endereco, :cidade, :bairro)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindParam(":nome", $nome);
-        $stmt->bindParam(":cpf", $cpf);
-        $stmt->bindParam(":endereco", $endereco);
-        $stmt->bindParam(":cidade", $cidade);
-        $stmt->bindParam(":bairro", $bairro);
+        try {
+            $sql = "INSERT INTO clientes (nome, cpf, endereco, cidade, bairro)
+                    VALUES (:nome, :cpf, :endereco, :cidade, :bairro)";
+            $stmt = $pdo->prepare($sql);
+            
+            // Usando bindParam conforme solicitado
+            $stmt->bindParam(":nome", $nome);
+            $stmt->bindParam(":cpf", $cpf);
+            $stmt->bindParam(":endereco", $endereco);
+            $stmt->bindParam(":cidade", $cidade);
+            $stmt->bindParam(":bairro", $bairro);
 
-        $mensagem = $stmt->execute() ? "Cliente cadastrado com sucesso!" : "Erro ao cadastrar cliente.";
+            if ($stmt->execute()) {
+                 header("Location: " . $_SERVER['PHP_SELF'] . "?status=sucesso");
+                exit();
+            } else {
+                $mensagem = "Erro desconhecido ao cadastrar cliente.";
+            }
+
+        } catch (PDOException $e) {
+            if ($e->getCode() == '23000') {
+                $mensagem = "❌ Erro: O CPF **" . htmlspecialchars($_POST["cpf"]) . "** já está cadastrado.";
+            } else {
+                // Para outros erros de banco de dados
+                $mensagem = "Erro no banco de dados: " . $e->getMessage();
+            }
+        }
     } else {
         $mensagem = "Nome e CPF são obrigatórios!";
     }
+} else if (isset($_GET['status']) && $_GET['status'] === 'sucesso') {
+
+    $mensagem = "Cliente cadastrado com sucesso!";
 }
 
-$clientes = $pdo->query("SELECT * FROM clientes ORDER BY id")->fetchAll(PDO::FETCH_ASSOC);
+
+$clientes = $pdo->query("SELECT * FROM clientes ORDER BY id DESC")->fetchAll(PDO::FETCH_ASSOC); // Adicionado DESC para ver o último no topo
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
