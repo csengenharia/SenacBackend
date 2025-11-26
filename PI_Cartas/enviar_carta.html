@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,51 +10,125 @@
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;600&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="./js/previewCarta.js"></script>
+
 </head>
 
 <body>
 
-<header class="cabecalho">
-    <a href="#" class="logo">
-        <img src="./img/logoPI.jpg" alt="Logo Abrace Um Idoso">
-    </a>
+    <header class="cabecalho">
+        <a href="#" class="logo">
+            <img src="./img/logoPI.jpg" alt="Logo Abrace Um Idoso">
+        </a>
 
-    <nav class="nav-menu">
-        <ul>
-            <li><a href="./cadastro.html">Cadastrar</a></li>
-            <li><a href="./login.html">Login</a></li>
-        </ul>
-        <ul>
-            <li><a href="./inicio.html">Início</a></li>
-            <li><a href="./agendamento.html">Agendamento</a></li>
-            <li><a href="./cartas.html">Cartas</a></li>
-            <li><a href="./contatos.html">Fale Conosco</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <form action="salvar_carta.php" method="POST">
-        <label>Seu Nome:</label>
-        <input type="text" name="remetente" required>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="./cadastro.html">Cadastrar</a></li>
+                <li><a href="./login.html">Login</a></li>
+            </ul>
+            <ul>
+                <li><a href="./inicio.html">Início</a></li>
+                <li><a href="./agendamento.html">Agendamento</a></li>
+                <li><a href="./cartas.html">Cartas</a></li>
+                <li><a href="./contatos.html">Fale Conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
 
-        <label>Instituição:</label>
-        <input type="text" name="instituicao" required>
 
-        <label>Destinatário (Idoso):</label>
-        <input type="text" name="destinatario" required>
+        <form action="salvar_carta.php" method="POST">
 
-        <label>Escreva sua carta:</label>
-        <textarea name="mensagem" rows="10" required></textarea>
+            <H1>ESCREVA SUA CARTA</H1>
+            <label>Voluntário LOGADO</label>
 
-        <button type="submit" class="botao">Enviar Carta</button>
-    </form>
-    
-<div class="linha-inferior"></div>
+            <label for="instituicao">Selecione a Instituição:</label>
+            <select name="instituicao" id="instituicao" required>
+                <option value="">-- Selecione --</option>
+                <option value="Asilo de Inválidos de Santos - Casa do Sol">Asilo de Inválidos de Santos - Casa do Sol
+                </option>
+                <option value="Associação Lar Cristão São Francisco de Assis">Associação Lar Cristão São Francisco de
+                    Assis</option>
+                <option value="Sociedade São Vicente de Paulo - Conselho Central de Santos">Sociedade São Vicente de
+                    Paulo - Conselho Central de Santos</option>
+                <option value="Lar Evangélico de Amparo à Velhice">Lar Evangélico de Amparo à Velhice</option>
+                <option value="Clínica de Repouso São Miguel Arcanjo">Clínica de Repouso São Miguel Arcanjo</option>
+                <option value="Associação Beneficência Nipo-Brasileira – Casa de Reabilitação Social">Associação
+                    Beneficência Nipo-Brasileira – Casa de Reabilitação Social</option>
+                <option value="Casa de Repouso Santa Paula">Casa de Repouso Santa Paula</option>
+                <option value="Residencial Vila Inglesa">Residencial Vila Inglesa</option>
+                <option value="Residencial Santa Therezinha">Residencial Santa Therezinha</option>
+                <option value="Pensionato São José">Pensionato São José</option>
+                <option value="Residencial Renascer">Residencial Renascer</option>
+                <option value="Residencial São Judas Tadeu">Residencial São Judas Tadeu</option>
+                <option value="Legião Brasileira de Amparo à Velhice">Legião Brasileira de Amparo à Velhice</option>
+                <option value="Pensionato Vovó Maria Marques">Pensionato Vovó Maria Marques</option>
+                <option value="Recanto de Idosos Mãezinha Joana – Casa Dia">Recanto de Idosos Mãezinha Joana – Casa Dia
+                </option>
+                <option value="Residencial Amor à Vida">Residencial Amor à Vida</option>
+                <option value="Residencial Novo Horizonte">Residencial Novo Horizonte</option>
+                <option value="Casa de Repouso Lua de Cristal">Casa de Repouso Lua de Cristal</option>
+                <option value="Residencial Bella Mari">Residencial Bella Mari</option>
+            </select>
 
-<footer class="rodape">
-    <p>© 2025 Abrace um idoso - Todos os direitos reservados</p>
-</footer>
-</main>
+
+            <label for="destinatario">Selecione o Idoso Destinatário:</label>
+            <select name="destinatario" id="destinatario" required>
+                <option value="">-- Selecione o Idoso --</option>
+                <option value="Dona Maria Aparecida Silva">Dona Maria Aparecida Silva</option>
+                <option value="Seu Antônio Pereira dos Santos">Seu Antônio Pereira dos Santos</option>
+                <option value="Dona Helena Barbosa de Almeida">Dona Helena Barbosa de Almeida</option>
+                <option value="Seu João Carlos Matos">Seu João Carlos Matos</option>
+                <option value="Dona Lourdes Ferreira">Dona Lourdes Ferreira</option>
+                <option value="Seu Sebastião Alves">Seu Sebastião Alves</option>
+                <option value="Dona Tereza Ramos">Dona Tereza Ramos</option>
+                <option value="Seu José Olímpio Nunes">Seu José Olímpio Nunes</option>
+                <option value="Dona Carmelita Souza">Dona Carmelita Souza</option>
+                <option value="Seu Manoel Augusto Rocha">Seu Manoel Augusto Rocha</option>
+                <option value="Dona Olga Martins de Oliveira">Dona Olga Martins de Oliveira</option>
+                <option value="Seu Vicente Carvalho">Seu Vicente Carvalho</option>
+                <option value="Dona Nair Costa">Dona Nair Costa</option>
+                <option value="Seu Orlando Vieira">Seu Orlando Vieira</option>
+                <option value="Dona Judite Maria Lopes">Dona Judite Maria Lopes</option>
+                <option value="Seu Geraldo Franco">Seu Geraldo Franco</option>
+                <option value="Dona Clarice Fernandes">Dona Clarice Fernandes</option>
+                <option value="Seu Waldemar Rodrigues">Seu Waldemar Rodrigues</option>
+                <option value="Dona Olívia Teixeira">Dona Olívia Teixeira</option>
+                <option value="Seu Armando Silva">Seu Armando Silva</option>
+            </select>
+
+
+            <label>Escreva sua carta:</label>
+            <textarea name="mensagem" rows="20" required></textarea>
+
+            <button type="button" onclick="previewCarta()" class="botao">Pré-visualizar Carta</button>
+            <button type="submit" class="botao">Enviar Carta</button>
+        </form>
+
+        <div id="previewModal" class="preview-modal">
+            <div class="preview-content">
+                <span class="preview-close" onclick="fecharModal()">✖</span>
+                <h2>Pré-visualização da Carta</h2>
+
+                <p><strong>De:</strong> <span id="prevRemetente"></span></p>
+                <p><strong>Instituição:</strong> <span id="prevInstituicao"></span></p>
+                <p><strong>Para:</strong> <span id="prevDestinatario"></span></p>
+                <hr>
+                <p id="prevMensagem" style="white-space: pre-wrap;"></p>
+
+                <button class="botao" onclick="gerarPDF()">Imprimir / Salvar em PDF</button>
+            </div>
+        </div>
+
+
+
+        <div class="linha-inferior"></div>
+        <footer class="rodape">
+            <p>© 2025 Abrace um idoso - Todos os direitos reservados</p>
+        </footer>
+    </main>
 </body>
+
 </html>

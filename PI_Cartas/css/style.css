@@ -103,6 +103,58 @@ body {
     margin: 0 auto;
 }
 
+/* ======== CARDS======== */
+
+.cards-container {
+display: flex;
+justify-content: center;
+gap: 30px;
+padding: 40px;
+flex-wrap: wrap;
+}
+.card {
+background: #ffffff;
+border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+padding: 25px;
+width: 280px;
+text-align: center;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+transform: scale(1.03);
+box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+.card h2 { font-size: 1.4rem; margin-bottom: 10px; }
+.card p { font-size: 0.95rem; margin-bottom: 20px; }
+.card-button {
+display: inline-block;
+padding: 10px 18px;
+background-color:#ebb860;
+color:#5d4037;
+border-radius: 6px;
+text-decoration: none;
+font-weight: bold;
+}
+.card-button:hover { background-color: #eca0a2; }
+form {
+max-width: 500px;
+margin: 30px auto;
+background: #ffffff;
+padding: 25px;
+border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+form h1 { text-align: center; margin-bottom: 20px; font-size: 1.5rem; }
+input[type="text"], input[type="email"], textarea {
+width: 100%;
+padding: 12px;
+margin-bottom: 15px;
+border: 1px solid #cccccc;
+border-radius: 8px;
+font-size: 1rem;
+}
+
 /* ======== BOTÕES PADRÃO ======== */
 .botao, button, input[type="submit"] {
     display: inline-block;
@@ -125,31 +177,178 @@ body {
     transform: scale(1.03);
 }
 
-/* ======== FORMULÁRIOS ======== */
+/* ======== FORMULÁRIO ENVIAR CARTA ======== */
 form {
-    max-width: 600px;
-    margin: 30px auto;
+    max-width: 650px;
+    margin: 50px auto;
+    background-color: #fffaf0;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+    font-family: 'Open Sans', sans-serif;
+    color: #5d4037;
     text-align: left;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-form label {
+form h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #5d4037;
     font-weight: bold;
-    display: block;
-    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #d1c4ae;
-    font-size: 15px;
+/* Labels */
+form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #5d4037;
 }
+
+/* Inputs */
+form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 10px;
+    border: 1px solid #d1c4ae;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #3b2212;
+    transition: all 0.3s ease;
+}
+
+form input[type="text"]:focus {
+    border-color: #ebb860;
+    box-shadow: 0 0 6px rgba(235, 184, 96, 0.5);
+    outline: none;
+}
+
+/* Textarea com textura de papel antigo */
+form textarea {
+    width: 100%;
+    padding: 1px;
+    border-radius: 10px;
+    border: 1px solid #cbb59b;
+    font-size: 16px;
+    background: url('https://i.imgur.com/AYVXTMh.jpg');
+    background-size: cover;
+    color: #3b2212;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 220px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.09);
+    font-family: 'Caveat', cursive;
+}
+
+/* Botão com ícone de envelope */
+button, .botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 35px;
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5d4037;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover, .botao:hover {
+    background-color: #ebb860;
+    color: #5d4037;
+    transform: scale(1.03);
+}
+
+/* Ícone no botão */
+button::before {
+    content: "✉️";
+    font-size: 20px;
+}
+
+/* Modal de pré-visualização */
+.preview-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-content {
+    background-color: #fffaf0;
+    width: 600px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    text-align: left;
+    font-size: 16px;
+    font-family: 'Open Sans', serif;
+}
+
+.preview-close {
+    float: right;
+    cursor: pointer;
+    font-size: 18px;
+    color: #5d4037;
+}
+
+/* Botão estilo carta para exportar */
+.export-btn {
+    background-color: #ebb860;
+    color: #5d4037;
+    font-size: 16px;
+    padding: 10px 25px;
+    border-radius: 25px;
+    margin-top: 10px;
+}
+
+.export-btn:hover {
+    background-color: #5d4037;
+    color: white;
+}
+
+.preview-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.preview-content {
+    background-color: #fffaf0;
+    width: 600px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    text-align: left;
+    font-size: 16px;
+}
+
+.preview-close {
+    float: right;
+    cursor: pointer;
+    font-size: 18px;
+    color: #5d4037;
+}
+
+
 
 /* ======== CARTAS RECEBIDAS ======== */
 .carta {
