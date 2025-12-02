@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT * FROM usuarios WHERE email =:email";
 
     //prepara a query e evita sql injection
-    $stmt = $conexao->prepare($sql);
+    $stmt = $pdo->prepare($sql);
 
     //executa o sql e substitui e-mail pelo valor digitado
     $stmt->execute(['email' => $email]);

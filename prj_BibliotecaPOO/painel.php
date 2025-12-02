@@ -41,8 +41,8 @@ if (!isset($_SESSION['usuario'])) {
             <div class="dropdown">
                 <button class="dropbtn">Aluguéis</button>
                 <div class="dropdown-content">
-                    <a href="alugueis/cadastrar.php">Cadastrar Aluguéis</a>
-                    <a href="alugueis/listar.php">Listar Aluguéis</a>
+                    <a href="alugueis/cadastraralugueis.php">Cadastrar Aluguéis</a>
+                    <a href="alugueis/listaralugueis.php">Listar Aluguéis</a>
                 </div>
             </div>
 
