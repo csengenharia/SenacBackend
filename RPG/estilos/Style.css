@@ -1,0 +1,9 @@
+body{
+    background-repeat: no-repeat;
+    background-image: url(../sources/background.webp);
+    background-size: cover;
+}
+
+.formulario{
+    background-color: black;
+}
