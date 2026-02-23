@@ -44,7 +44,7 @@ CREATE TABLE Batalhas (
 );
 
 -- ==========================================
--- PARTE 02: INSERINDO DADOS E ATUALIZAÇÕES
+-- PARTE 02: Manipulação de dados, com as pesquisas e atualizações da atividade
 -- ==========================================
 
 -- a. Insira 10 pokémons com tipos e atributos plausíveis (ex.: Pikachu, Onix, dentre outros). Um dos pokémons deve ser Pikachu.
@@ -67,7 +67,7 @@ INSERT INTO LocaisBatalha (nomeLocal, regiao, ambiente, internoExterno) VALUES
 INSERT INTO Batalhas (idLocal, idPokemonAtacante, idPokemonDefensor, idPokemonVencedor, climaBatalha) VALUES 
 (1, 1, 2, 2, 'Ensolarado'), (4, 3, 4, 3, 'Ensolarado'), -- 2 Ensolaradas
 (2, 1, 5, 1, 'Chuvoso'), (2, 1, 6, 6, 'Chuvoso'),     -- 2 Chuvosas com Pikachu
-(3, 7, 8, 8, 'Chuvoso'),                             -- 1 Chuvosa extra
+(3, 7, 8, 8, 'Chuvoso'), -- 1 Chuvosa extra
 (5, 9, 10, 9, 'Nublado'), (1, 2, 3, 3, 'Tempestade'),
 (2, 4, 5, 4, 'Nublado'), (3, 6, 7, 7, 'Nevoeiro'),
 (4, 8, 9, 8, 'Ensolarado');
@@ -88,7 +88,7 @@ INNER JOIN Pokemons P2 ON B.idPokemonDefensor = P2.idPokemon
 WHERE B.climaBatalha = 'Chuvoso' AND (P1.nome = 'Pikachu' OR P2.nome = 'Pikachu');
 
 -- ==========================================
--- PARTE 03: 
+-- PARTE 03: Pesquisa dos dados solicitados na atividade
 -- ==========================================
 
 -- h. Liste todas as batalhas com nomes dos pokémons (atacante, defensor, vencedor) e nome do local.
